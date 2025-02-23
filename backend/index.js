@@ -38,6 +38,7 @@ const predictor = new PredictionApi.PredictionAPIClient(
   const sampleProject = await trainer.createProject("Sample Project");
 
   const sedanTag = await trainer.createTag(sampleProject.id, "sedan");
+  const suvTag = await trainer.createTag(sampleProject.id, "suv");
   const truckTag = await trainer.createTag(sampleProject.id, "truck");
 
   const sampleDataRoot = "images";
@@ -53,6 +54,18 @@ const predictor = new PredictionApi.PredictionAPIClient(
         sampleProject.id,
         fs.readFileSync(`${sedanDir}/${file}`),
         { tagIds: [sedanTag.id] }
+      )
+    );
+  });
+
+  const suvDir = `${sampleDataRoot}/suv`;
+  const suvFiles = fs.readdirSync(suvDir);
+  suvFiles.forEach((file) => {
+    fileUploadPromises.push(
+      trainer.createImagesFromData(
+        sampleProject.id,
+        fs.readFileSync(`${suvDir}/${file}`),
+        { tagIds: [suvTag.id] }
       )
     );
   });
@@ -94,7 +107,7 @@ const predictor = new PredictionApi.PredictionAPIClient(
     predictionResourceId
   );
 
-  const testFile = fs.readFileSync(`${sampleDataRoot}/test/test_image.jpg`);
+  const testFile = fs.readFileSync(`${sampleDataRoot}/test/test_image.png`);
 
   const results = await predictor.classifyImage(
     sampleProject.id,
