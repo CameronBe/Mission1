@@ -37,37 +37,34 @@ const predictor = new PredictionApi.PredictionAPIClient(
   console.log("Creating project...");
   const sampleProject = await trainer.createProject("Sample Project");
 
-  const hemlockTag = await trainer.createTag(sampleProject.id, "Hemlock");
-  const cherryTag = await trainer.createTag(
-    sampleProject.id,
-    "Japanese Cherry"
-  );
+  const sedanTag = await trainer.createTag(sampleProject.id, "sedan");
+  const truckTag = await trainer.createTag(sampleProject.id, "truck");
 
-  const sampleDataRoot = "Images";
+  const sampleDataRoot = "images";
 
   console.log("Adding images...");
   let fileUploadPromises = [];
 
-  const hemlockDir = `${sampleDataRoot}/Hemlock`;
-  const hemlockFiles = fs.readdirSync(hemlockDir);
-  hemlockFiles.forEach((file) => {
+  const sedanDir = `${sampleDataRoot}/sedan`;
+  const sedanFiles = fs.readdirSync(sedanDir);
+  sedanFiles.forEach((file) => {
     fileUploadPromises.push(
       trainer.createImagesFromData(
         sampleProject.id,
-        fs.readFileSync(`${hemlockDir}/${file}`),
-        { tagIds: [hemlockTag.id] }
+        fs.readFileSync(`${sedanDir}/${file}`),
+        { tagIds: [sedanTag.id] }
       )
     );
   });
 
-  const cherryDir = `${sampleDataRoot}/Japanese_Cherry`;
-  const japaneseCherryFiles = fs.readdirSync(cherryDir);
-  japaneseCherryFiles.forEach((file) => {
+  const truckDir = `${sampleDataRoot}/truck`;
+  const truckFiles = fs.readdirSync(truckDir);
+  truckFiles.forEach((file) => {
     fileUploadPromises.push(
       trainer.createImagesFromData(
         sampleProject.id,
-        fs.readFileSync(`${cherryDir}/${file}`),
-        { tagIds: [cherryTag.id] }
+        fs.readFileSync(`${truckDir}/${file}`),
+        { tagIds: [truckTag.id] }
       )
     );
   });
@@ -97,7 +94,7 @@ const predictor = new PredictionApi.PredictionAPIClient(
     predictionResourceId
   );
 
-  const testFile = fs.readFileSync(`${sampleDataRoot}/Test/test_image.jpg`);
+  const testFile = fs.readFileSync(`${sampleDataRoot}/test/test_image.jpg`);
 
   const results = await predictor.classifyImage(
     sampleProject.id,
