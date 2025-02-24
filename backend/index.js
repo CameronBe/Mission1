@@ -13,7 +13,7 @@ app.use(express.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-app.post("/", upload.single("imageFile"), async (req, res) => {
+app.post("/", upload.single("vehicleImage"), async (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file was uploaded.");
   }
