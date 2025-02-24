@@ -29,6 +29,7 @@ const identifyVehicleType = async (test_image_number) => {
     testFile
   );
 
+  // Returns the vehicleType with the highest probability
   const { tagName: vehicleType } = predictions.reduce((highest, current) => {
     return current.probability > highest.probability ? current : highest;
   }, predictions[0]);
