@@ -27,15 +27,7 @@ const classifyImage = async () => {
     testFile
   );
 
-  // Show results
-  console.log("Results:");
-  results.predictions.forEach((predictedResult) => {
-    console.log(
-      `\t ${predictedResult.tagName}: ${(
-        predictedResult.probability * 100.0
-      ).toFixed(2)}%`
-    );
-  });
+  return results;
 };
 
 module.exports = { classifyImage };
