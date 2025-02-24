@@ -4,9 +4,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 // Will probably end up making this a post request that is fired in tandem with the submision of a form
-app.get("/", async (req, res) => {
-  const { predictions } = await classifyImage();
+app.post("/", async ({ body: { test_image_number } }, res) => {
+  const { predictions } = await classifyImage(test_image_number);
 
   const highestProbabilityPrediction = predictions.reduce(
     (highest, current) => {
