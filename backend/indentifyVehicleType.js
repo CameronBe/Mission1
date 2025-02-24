@@ -18,15 +18,11 @@ const predictor = new PredictionApi.PredictionAPIClient(
   predictionEndpoint
 );
 
-const identifyVehicleType = async (test_image_number) => {
-  const testFile = fs.readFileSync(
-    `images/test/test_image_${test_image_number}.jpg`
-  );
-
+const identifyVehicleType = async (imageFile) => {
   const { predictions } = await predictor.classifyImage(
     projectId,
     publishIterationName,
-    testFile
+    imageFile
   );
 
   // Returns the vehicleType with the highest probability
