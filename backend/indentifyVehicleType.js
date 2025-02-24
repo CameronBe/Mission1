@@ -18,18 +18,22 @@ const predictor = new PredictionApi.PredictionAPIClient(
   predictionEndpoint
 );
 
-const classifyImage = async (test_image_number) => {
+const identifyVehicleType = async (test_image_number) => {
   const testFile = fs.readFileSync(
     `images/test/test_image_${test_image_number}.jpg`
   );
 
-  const results = await predictor.classifyImage(
+  const { predictions } = await predictor.classifyImage(
     projectId,
     publishIterationName,
     testFile
   );
 
-  return results;
+  const { tagName: vehicleType } = predictions.reduce((highest, current) => {
+    return current.probability > highest.probability ? current : highest;
+  }, predictions[0]);
+
+  return vehicleType;
 };
 
-module.exports = { classifyImage };
+module.exports = { identifyVehicleType };

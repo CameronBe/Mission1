@@ -1,4 +1,4 @@
-const { classifyImage } = require("./classifyImage");
+const { identifyVehicleType } = require("./indentifyVehicleType");
 
 const express = require("express");
 const app = express();
@@ -6,19 +6,11 @@ const port = 3000;
 
 app.use(express.json());
 
-// Will probably end up making this a post request that is fired in tandem with the submision of a form
 app.post("/", async ({ body: { test_image_number } }, res) => {
-  const { predictions } = await classifyImage(test_image_number);
-
-  const highestProbabilityPrediction = predictions.reduce(
-    (highest, current) => {
-      return current.probability > highest.probability ? current : highest;
-    },
-    predictions[0]
-  );
+  const vehicleType = await identifyVehicleType(test_image_number);
 
   res.json({
-    type: highestProbabilityPrediction.tagName,
+    vehicleType,
   });
 });
 
