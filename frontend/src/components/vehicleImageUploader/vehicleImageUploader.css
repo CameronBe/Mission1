@@ -43,16 +43,14 @@
 }
 
 .vehicleImageLabel {
-  background-color: white;
-  color: darkslateblue;
-
-  padding: 0.25rem 1.25rem;
+  color: black;
+  background-color: whitesmoke;
+  padding: 0.25rem 1rem;
   border-radius: 0.25rem;
-  border: solid darkslateblue 0.0625rem;
+  box-shadow: 0.25rem 0.125rem 0.0625rem 0.0625rem gainsboro;
 }
 
 .vehicleImageLabel:hover {
-  color: white;
-  background-color: darkslateblue;
+  color: #ff8051;
   cursor: pointer;
 }
