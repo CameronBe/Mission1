@@ -3,10 +3,10 @@ import VehicleImageUploader from "./components/VehicleImageUploader";
 
 function App() {
   return (
-    <>
-      <h1>Turners</h1>
+    <div className="app">
+      <h1>Home Page</h1>
       <VehicleImageUploader />
-    </>
+    </div>
   );
 }
 

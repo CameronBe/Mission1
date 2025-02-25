@@ -3,9 +3,7 @@ import { useState } from "react";
 
 const VehicleImageUploader = () => {
   const [vehiclePreview, setVehiclePreview] = useState("");
-  const [vehicleType, setVehicleType] = useState(
-    "upload vehicle image first, to indentify vehicle type"
-  );
+  const [vehicleType, setVehicleType] = useState("...");
   const [isIndentifyingVehicleType, setIsIndentifyingVehicleType] =
     useState(false);
 
@@ -29,8 +27,7 @@ const VehicleImageUploader = () => {
 
   return (
     <>
-      <form>
-        <input type="file" id="upload" onChange={handleVehicleImageUpload} />
+      <div className="vehicleCard">
         <div className="vehiclePreviewBox">
           {vehiclePreview && (
             <img
@@ -40,14 +37,18 @@ const VehicleImageUploader = () => {
             />
           )}
         </div>
-      </form>
 
-      <p>
-        <b>Vehicle Type:</b>{" "}
-        {isIndentifyingVehicleType
-          ? "indentifying vehicle type..."
-          : vehicleType}
-      </p>
+        <div>
+          <h2 className="VehicleTypeTitle">Vehicle Type</h2>
+          <p className="VehicleTypeText">
+            {isIndentifyingVehicleType ? "indentifying..." : vehicleType}
+          </p>
+        </div>
+      </div>
+
+      <form className="vehicleImageForm">
+        <input type="file" onChange={handleVehicleImageUpload} />
+      </form>
     </>
   );
 };

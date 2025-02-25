@@ -1,5 +1,4 @@
 .vehiclePreviewBox {
-  margin-top: 1rem;
   background-image: url("https://placehold.co/200x200/coral/white");
   background-size: cover;
 }
@@ -8,4 +7,34 @@
 .vehiclePreviewBox {
   width: 10rem;
   height: 10rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.vehicleCard {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+  max-width: 20rem;
+  background-color: whitesmoke;
+  padding-right: 2rem;
+  box-shadow: 1rem 0.5rem 0.0625rem 0.0625rem gainsboro;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.VehicleTypeTitle,
+.VehicleTypeText {
+  margin: 0;
+  text-align: center;
+}
+
+.VehicleTypeTitle {
+  font-size: large;
+}
+
+.vehicleImageForm {
+  margin-top: 1rem;
+  width: 20rem;
 }
