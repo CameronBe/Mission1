@@ -45,9 +45,10 @@
 .vehicleImageLabel {
   background-color: white;
   color: darkslateblue;
-  border: 0.065rem solid darkslateblue;
+
   padding: 0.25rem 1.25rem;
   border-radius: 0.25rem;
+  border: solid darkslateblue 0.0625rem;
 }
 
 .vehicleImageLabel:hover {

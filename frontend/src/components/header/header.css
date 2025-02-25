@@ -1,0 +1,31 @@
+.header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.25rem;
+  justify-self: end;
+  list-style-type: none;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #ff8051;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}

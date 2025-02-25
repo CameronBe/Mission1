@@ -1,10 +1,12 @@
 import "./App.css";
-import VehicleImageUploader from "./components/VehicleImageUploader";
+import Header from "./components/header/Header";
+import VehicleImageUploader from "./components/vehicleImageUploader/VehicleImageUploader";
 
 function App() {
   return (
     <div className="app">
-      <h1>Home Page</h1>
+      <Header />
+      <h1>Home</h1>
       <VehicleImageUploader />
     </div>
   );
