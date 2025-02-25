@@ -1,3 +1,4 @@
+import "./VehicleImageUploader.css";
 import { useState } from "react";
 
 const VehicleImageUploader = () => {
@@ -22,11 +23,17 @@ const VehicleImageUploader = () => {
 
   return (
     <>
-      <h1>Home</h1>
-
       <form>
-        <input type="file" onChange={handleVehicleImageUpload} />
-        {vehiclePreview && <img src={vehiclePreview} alt="Vehicle preview" />}
+        <input type="file" id="upload" onChange={handleVehicleImageUpload} />
+        <div className="vehiclePreviewBox">
+          {vehiclePreview && (
+            <img
+              className="vehiclePreview"
+              src={vehiclePreview}
+              alt="Vehicle preview"
+            />
+          )}
+        </div>
       </form>
 
       <p>Vehicle type: {vehicleType}</p>

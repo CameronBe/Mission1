@@ -1,0 +1,11 @@
+.vehiclePreviewBox {
+  margin-top: 1rem;
+  background-image: url("https://placehold.co/200x200/coral/white");
+  background-size: cover;
+}
+
+.vehiclePreview,
+.vehiclePreviewBox {
+  width: 10rem;
+  height: 10rem;
+}
