@@ -47,7 +47,15 @@ const VehicleImageUploader = () => {
       </div>
 
       <form className="vehicleImageForm">
-        <input type="file" onChange={handleVehicleImageUpload} />
+        <label className="vehicleImageLabel" htmlFor="vehicleImageInput">
+          UPLOAD
+        </label>
+        <input
+          id="vehicleImageInput"
+          className="vehicleImageInput"
+          type="file"
+          onChange={handleVehicleImageUpload}
+        />
       </form>
     </>
   );

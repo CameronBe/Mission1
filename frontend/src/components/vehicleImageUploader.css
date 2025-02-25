@@ -38,3 +38,20 @@
   margin-top: 1rem;
   width: 20rem;
 }
+.vehicleImageInput {
+  display: none;
+}
+
+.vehicleImageLabel {
+  background-color: white;
+  color: darkslateblue;
+  border: 0.065rem solid darkslateblue;
+  padding: 0.25rem 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.vehicleImageLabel:hover {
+  color: white;
+  background-color: darkslateblue;
+  cursor: pointer;
+}
