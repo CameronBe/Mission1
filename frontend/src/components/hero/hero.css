@@ -1,0 +1,16 @@
+.hero {
+  width: 100vw;
+  height: 10rem;
+  display: grid;
+  justify-content: center;
+}
+
+.hero-title {
+  align-self: center;
+  color: darkslateblue;
+  background-color: whitesmoke;
+  opacity: 0.85;
+  margin: 0.5rem;
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+}
