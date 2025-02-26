@@ -7,18 +7,15 @@ const multer = require("multer");
 const app = express();
 const port = 3000;
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
-app.post("/", upload.single("vehicleImage"), async (req, res) => {
-  if (!req.file) {
+app.post("/", multer().single("vehicleImage"), async ({ file }, res) => {
+  if (!file) {
     return res.status(400).send("No file was uploaded.");
   }
 
-  const vehicleType = await identifyVehicleType(req.file.buffer);
+  const vehicleType = await identifyVehicleType(file.buffer);
 
   res.json({
     vehicleType,
