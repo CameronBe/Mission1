@@ -3,14 +3,16 @@
   height: 10rem;
   display: grid;
   justify-content: center;
+  border-bottom: 0.0625rem solid whitesmoke;
 }
 
 .hero-title {
   align-self: center;
-  color: darkslateblue;
+
   background-color: whitesmoke;
   opacity: 0.85;
   margin: 0.5rem;
-  padding: 1rem 4rem;
+
+  padding: 0 2rem;
   border-radius: 0.5rem;
 }
