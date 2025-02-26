@@ -24,14 +24,18 @@
   align-items: center;
 }
 
-.VehicleTypeTitle,
-.VehicleTypeText {
+.vehicleTypeTitle,
+.vehicleTypeText {
   margin: 0;
   text-align: center;
 }
 
-.VehicleTypeTitle {
+.vehicleTypeTitle {
   font-size: large;
+}
+
+.vehicleTypeText {
+  color: gray;
 }
 
 .vehicleImageForm {

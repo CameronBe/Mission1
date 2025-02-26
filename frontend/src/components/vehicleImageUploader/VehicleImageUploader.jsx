@@ -39,8 +39,8 @@ const VehicleImageUploader = () => {
         </div>
 
         <div>
-          <h2 className="VehicleTypeTitle">Vehicle Type</h2>
-          <p className="VehicleTypeText">
+          <h2 className="vehicleTypeTitle">Vehicle Type</h2>
+          <p className="vehicleTypeText">
             {isIndentifyingVehicleType ? "indentifying..." : vehicleType}
           </p>
         </div>
