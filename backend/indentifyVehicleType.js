@@ -8,7 +8,7 @@ const predictionKey = process.env["VISION_PREDICTION_KEY"];
 const predictionEndpoint = process.env["VISION_PREDICTION_ENDPOINT"];
 const projectId = process.env["VISION_PROJECT_ID"];
 
-const publishIterationName = "Iteration1";
+const publishIterationName = "Iteration2";
 
 const predictor_credentials = new msRest.ApiKeyCredentials({
   inHeader: { "Prediction-key": predictionKey },
