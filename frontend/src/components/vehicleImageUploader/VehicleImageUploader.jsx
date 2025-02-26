@@ -26,7 +26,7 @@ const VehicleImageUploader = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="vehicleCard">
         <div className="vehiclePreviewBox">
           {vehiclePreview && (
@@ -57,7 +57,7 @@ const VehicleImageUploader = () => {
           onChange={handleVehicleImageUpload}
         />
       </form>
-    </>
+    </div>
   );
 };
 

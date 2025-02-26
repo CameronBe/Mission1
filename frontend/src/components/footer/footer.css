@@ -1,12 +1,11 @@
 .footer {
   border-top: 0.0625rem solid whitesmoke;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  margin-top: 100rem;
   padding: 2rem;
   box-sizing: border-box;
   display: grid;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer-title {

@@ -11,6 +11,7 @@
   display: flex;
   gap: 1.25rem;
   justify-self: end;
+
   list-style-type: none;
 }
 

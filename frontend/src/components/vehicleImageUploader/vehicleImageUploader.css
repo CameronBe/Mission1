@@ -12,7 +12,7 @@
 }
 
 .vehicleCard {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: auto auto;
   gap: 2rem;
