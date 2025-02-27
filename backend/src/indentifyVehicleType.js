@@ -1,14 +1,10 @@
 require("dotenv").config();
-const fs = require("fs");
 const PredictionApi = require("@azure/cognitiveservices-customvision-prediction");
 const msRest = require("@azure/ms-rest-js");
 
-// retrieve environment variables
 const predictionKey = process.env["VISION_PREDICTION_KEY"];
 const predictionEndpoint = process.env["VISION_PREDICTION_ENDPOINT"];
 const projectId = process.env["VISION_PROJECT_ID"];
-
-const publishIterationName = "Iteration2";
 
 const predictor_credentials = new msRest.ApiKeyCredentials({
   inHeader: { "Prediction-key": predictionKey },
@@ -18,11 +14,11 @@ const predictor = new PredictionApi.PredictionAPIClient(
   predictionEndpoint
 );
 
-const identifyVehicleType = async (imageFile) => {
+const identifyVehicleType = async (vehicleImage) => {
   const { predictions } = await predictor.classifyImage(
     projectId,
-    publishIterationName,
-    imageFile
+    "Iteration2",
+    vehicleImage
   );
 
   // Returns the vehicleType with the highest probability
@@ -33,4 +29,4 @@ const identifyVehicleType = async (imageFile) => {
   return vehicleType;
 };
 
-module.exports = { identifyVehicleType };
+module.exports = identifyVehicleType;

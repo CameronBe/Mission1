@@ -1,4 +1,4 @@
-const { identifyVehicleType } = require("./indentifyVehicleType");
+const identifyVehicleType = require("./indentifyVehicleType");
 
 const express = require("express");
 const cors = require("cors");
