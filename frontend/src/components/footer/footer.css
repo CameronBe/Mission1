@@ -4,8 +4,9 @@
   padding: 2rem;
   box-sizing: border-box;
   display: grid;
-  position: absolute;
-  bottom: 0;
+  margin-top: 2rem;
+  background-image: linear-gradient(white, whitesmoke, gainsboro);
+  height: 100vh;
 }
 
 .footer-title {
